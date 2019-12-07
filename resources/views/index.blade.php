@@ -3,12 +3,14 @@
         'Personalizēti datori' => [
             'description' => 'Neziniet kāds dators nepieciešams Jūsu vajadzībām? Neuztraucieties, Mūsu serviss nodrošinās visus rīkus, lai Jūs tiktu pie datora, kādu kārojat tieši Jūs!',
             'buttonTitle' => 'Uzzināt vairāk',
+            'buttonUrl' => 'a',
             'imgUrl' => '',
             'infoPlacement' => 'left',
         ],
         'Kontakti' => [
             'description' => '',
             'buttonTitle' => 'Uzzināt vairāk par CCS',
+            'buttonUrl' => '',
             'imgUrl' => '',
             'infoPlacement' => 'right',
         ],
@@ -30,7 +32,7 @@
                 <div class="col">
                     <h2 class="mb-3"><?= $k ?></h2>
                     <p><?= $v['description'] ?></p>
-                    <button class="bg-info p-2 border-0 text-white w-100"><?= $v['buttonTitle'] ?></button>
+                    <a href="<?= $v['buttonUrl'] ?>" class="bg-info p-2 border-0 text-white w-100 btn"><?= $v['buttonTitle'] ?></a>
                 </div>
                 <div class="col">
                     <img src="<?= $v['imgUrl'] ?>">
@@ -42,7 +44,7 @@
                 <div class="col">
                     <h2 class="mb-3"><?= $k ?></h2>
                     <p><?= $v['description'] ?></p>
-                    <button class="bg-info p-2 border-0 text-white w-100"><?= $v['buttonTitle'] ?></button>
+                    <a href="<?= $v['buttonUrl'] ?>" class="bg-info p-2 border-0 text-white w-100 btn"><?= $v['buttonTitle'] ?></a>
                 </div>
             <?php endif; ?>
         </div>
