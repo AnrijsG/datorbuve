@@ -3,7 +3,7 @@
         'Personalizēti datori' => [
             'description' => 'Neziniet kāds dators nepieciešams Jūsu vajadzībām? Neuztraucieties, Mūsu serviss nodrošinās visus rīkus, lai Jūs tiktu pie datora, kādu kārojat tieši Jūs!',
             'buttonTitle' => 'Uzzināt vairāk',
-            'buttonUrl' => '',
+            'buttonUrl' => 'select-pc',
             'shouldShowBorder' => true,
         ],
         'Kontakti' => [
