@@ -25,9 +25,10 @@
             <?php $i++; ?>
         <?php endforeach; ?>
         <div class="slidecontainer mt-3 d-none">
-            <form class="text-center" method="GET" action="">
-                <input type="text" class="d-none" id="pc-type" readonly />
-                <input type="range" min="0" max="4" value="0" class="slider" id="price" />
+            <form class="text-center" method="post" action="select-pc/submit">
+                @csrf
+                <input type="text" class="d-none" id="pc-type" name="pc-type" readonly />
+                <input type="range" min="0" max="4" value="0" class="slider" id="price" name="price" />
                 <b><p class="value-text text-center">Lēts</p></b>
                 <input type="submit" class="bg-success text-white btn" value="Izvēlēties" />
             </form>

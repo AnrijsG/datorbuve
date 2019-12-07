@@ -22,3 +22,5 @@ Route::get('/contacts', function () {
 Route::get('/select-pc', function () {
     return view('select-pc-type');
 });
+
+Route::any('/select-pc/submit', 'SelectionController@select');
