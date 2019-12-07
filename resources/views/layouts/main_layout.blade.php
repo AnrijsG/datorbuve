@@ -7,7 +7,7 @@
     </head>
 
     <body>
-        <div class="container my-5 py-5 px-4 border rounded">
+        <div class="container py-5 px-4 border rounded">
             @yield('content')
         </div>
 
