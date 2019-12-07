@@ -10,7 +10,7 @@
         'Kontakti' => [
             'description' => '',
             'buttonTitle' => 'Uzzināt vairāk par CCS',
-            'buttonUrl' => '',
+            'buttonUrl' => 'contacts',
             'imgUrl' => '',
             'infoPlacement' => 'right',
         ],
