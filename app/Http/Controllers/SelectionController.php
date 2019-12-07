@@ -26,7 +26,7 @@ class SelectionController extends Controller{
 
     function select(Request $request){
         if($request->isMethod("post")){
-            $this->price = $request->input("price");
+            $this->price = round($request->input("price") / 100);
             $this->type = $request->input("pc-type");
 
             $pc = Pc::where('price_category', '=', $this->price)->where('computer_type', '=', $this->type)->get();

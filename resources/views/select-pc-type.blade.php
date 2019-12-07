@@ -28,7 +28,7 @@
             <form class="text-center" method="post" action="select-pc/submit">
                 @csrf
                 <input type="text" class="d-none" id="pc-type" name="pc-type" readonly />
-                <input type="range" min="0" max="4" value="0" class="slider" id="price" name="price" />
+                <input type="range" min="0" step="0.5" max="400" value="0" class="slider" id="price" name="price" />
                 <b><p class="value-text text-center">Lēts</p></b>
                 <input type="submit" class="bg-success text-white btn" value="Izvēlēties" />
             </form>
@@ -49,6 +49,15 @@
             -webkit-transition: .2s;
             transition: opacity .2s;
         }
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%; 
+            background: #4CAF50;
+            cursor: pointer;
+        }
         a.btn.selected {
             background-color: green !important;
         }
@@ -62,8 +71,20 @@
             $("#pc-type").val($("#button" + count).text());
         }
 
+        $("#price").on("mouseup", function(){
+            var val = Math.round(this.value / 100);
+            this.value = val * 100;
+            $(".value-text").text(values[this.value / 100]);
+        });
+
+        $("#price").on("touchend", function(){
+            var val = Math.round(this.value / 100);
+            this.value = val * 100;
+            $(".value-text").text(values[this.value / 100]);
+        });
+
         $("#price").on("input", function(){
-            $(".value-text").text(values[this.value]);
+            $(".value-text").text(values[Math.round(this.value / 100)]);
         });
     </script>
 @endsection
