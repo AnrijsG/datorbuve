@@ -1,5 +1,6 @@
-<?php foreach($pc as $pcxd){
-    echo($pcxd);
+<?php 
+    echo($pc[0]);
     echo "<br>";
     echo "<br>";
-} ?>
+    echo($replacement[0]);
+?>

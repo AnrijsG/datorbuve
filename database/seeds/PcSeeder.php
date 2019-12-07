@@ -10,7 +10,7 @@ class PcSeeder extends Seeder{
      */
     public function run(){
         DB::table('pc')->insert([
-            'computer-type' => "Spēļu",
+            'computer_type' => "Spēļu",
             'price'         => 4,
             'case'          => 'test',
             'mobo'          => 'motherboard',

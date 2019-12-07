@@ -15,7 +15,7 @@ class CreatePcsTable extends Migration
     {
         Schema::create('pc', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('computer-type');
+            $table->string('computer_type');
             $table->integer('price');
             $table->string('case');
             $table->string('mobo');
