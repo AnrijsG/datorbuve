@@ -4,7 +4,7 @@
 
 @extends('layouts.main_layout')
 
-@section('title', 'Contacts')
+@section('title', 'Kontakti')
 
 @section('navbar')
 

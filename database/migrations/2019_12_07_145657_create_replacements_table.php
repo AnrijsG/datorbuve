@@ -16,9 +16,10 @@ class CreateReplacementsTable extends Migration
         Schema::create('replacements', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('component'); //MoBo or CPU or GPU etc
+            $table->string('name');
             $table->string('computer_type');
             $table->integer('price');
-            $table->decimal('price_increase',4,2);
+            $table->decimal('price_increase', 6, 2);
             $table->string('description');
             $table->timestamps();
         });

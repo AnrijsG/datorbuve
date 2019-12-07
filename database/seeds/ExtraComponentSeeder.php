@@ -12,6 +12,7 @@ class ExtraComponentSeeder extends Seeder{
         DB::table('replacements')->insert([
             'computer_type'     => "Spēļu",
             'component'         => "mobo",
+            'name'              => "cita mātesplate",
             'price'             => 4,
             'price_increase'    => 16.69,
             'description'       => 'Kas sitam labaks',
@@ -19,6 +20,7 @@ class ExtraComponentSeeder extends Seeder{
         DB::table('replacements')->insert([
             'computer_type'     => "Spēļu",
             'component'         => "mobo",
+            'name'              => "xd1213",
             'price'             => 3,
             'price_increase'    => 1.69,
             'description'       => 'Kas sitam labaks',
