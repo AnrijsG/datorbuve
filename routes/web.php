@@ -18,3 +18,7 @@ Route::any('/', function () {
 Route::get('/contacts', function () {
     return view('contacts');
 });
+
+Route::get('/select-pc', function () {
+    return view('select-pc-type');
+});
