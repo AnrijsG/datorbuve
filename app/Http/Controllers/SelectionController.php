@@ -10,6 +10,15 @@ use Illuminate\Http\Request;
 class SelectionController extends Controller{
     private $price = 0;
     private $type = '';
+    private $variables = [  
+        'mobo', 
+        'cpu', 
+        'gpu', 
+        'ram', 
+        'storage', 
+        'psu', 
+        'case'
+    ];
 
     function searchReplacement($name){
         return Replacement::where('price', '=', $this->price)->where('computer_type', '=', $this->type)->where('component', '=', $name)->get();
@@ -22,13 +31,9 @@ class SelectionController extends Controller{
 
             $pc = Pc::where('price_category', '=', $this->price)->where('computer_type', '=', $this->type)->get();
             $replacement = array();
-            $replacement['mobo'] = self::searchReplacement('mobo');
-            $replacement['cpu'] = self::searchReplacement('cpu');
-            $replacement['gpu'] = self::searchReplacement('gpu');
-            $replacement['ram'] = self::searchReplacement('ram');
-            $replacement['storage'] = self::searchReplacement('storage');
-            $replacement['psu'] = self::searchReplacement('psu');
-            $replacement['case'] = self::searchReplacement('case');
+            foreach($this->variables as $k => $v){
+                $replacement[$v] = self::searchReplacement($v);
+            }
 
             return view('selected-pc', compact('pc', 'replacement'));
         }else{
