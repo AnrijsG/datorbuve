@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStorageTable extends Migration
+class CreateReplacementsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateStorageTable extends Migration
      */
     public function up()
     {
-        Schema::create('storage', function (Blueprint $table) {
+        Schema::create('replacements', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('type'); //1 HDD, 2 SSD, 3 HDD/SSD mix
-            $table->string('manufacturer');
-            $table->integer('size');
-            $table->integer('rpm');
-            $table->integer('buffer');
-            $table->string('connection');
+            $table->string('component'); //MoBo or CPU or GPU etc
+            $table->decimal('price_increase',4,2);
             $table->string('description');
             $table->timestamps();
         });
@@ -33,6 +29,6 @@ class CreateStorageTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('storage');
+        Schema::dropIfExists('replacements');
     }
 }

@@ -10,6 +10,7 @@ class SelectionController extends Controller{
         if($request->isMethod("post")){
             $price = $request->input("price");
             $type = $request->input("pc-type");
+
             return view('selected-pc', compact('price', 'type'));
         }else{
             return redirect("/select-pc");
