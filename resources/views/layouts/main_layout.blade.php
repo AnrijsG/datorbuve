@@ -1,4 +1,3 @@
-@section('head')
 <html>
     <head>
         <title>@yield('title') | CCS</title>
@@ -10,4 +9,5 @@
         </div>
     </body>
 </html>
+@show
 @endsection
