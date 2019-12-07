@@ -41,18 +41,25 @@
             <div class="col-12 pt-3 text-center">
 
                 <?php foreach($variablesPC as $k => $v): ?>
-                <div class="info border" onclick="openExtras(<?= $i ?>)" id="component<?= $i ?>">
-                    <p>{{ $k }} : {{ $computer[$v] }}</p>
-                    <div class="extra-info d-none border-top">
-                    <?php foreach($replacement[$v] as $k1 => $v1): ?>
-                        <div class="col-3 border">
-                            <?php foreach($variablesComponent as $key => $var): ?>
-                                <p>{{ $key }} : {{ $v1[$var] }}</p>
-                            <?php endforeach; ?>
-                        </div>
-                    <?php endforeach; ?>
+                <div>
+                    <div class="info border" onclick="openExtras(<?= $i ?>)" id="component<?= $i ?>">
+                        <p>{{ $k }} : {{ $computer[$v] }}</p>
                     </div>
-                </div>
+                    <div>
+                        <div class="extra-info d-none border-top">
+                        <?php $first = true; ?>
+                        <?php foreach($replacement[$v] as $k1 => $v1): ?>
+                            <div class="col-3 border">
+                                <?php foreach($variablesComponent as $key => $var): ?>
+                                    <p>{{ $key }} : {{ $v1[$var] }}</p>
+                                <?php endforeach; ?>
+                                <input type="radio" <?= ($first)?'checked':''; ?> />
+                                <?php $first = false; ?>
+                            </div>
+                        <?php endforeach; ?>
+                        </div>
+                    </div>
+                <div>
                 <?php $i++; ?>
                 <?php endforeach; ?>
                 <div>
@@ -63,7 +70,7 @@
 
         <script>
             function openExtras(count){
-                $container = $("#component" + count).find(".extra-info");
+                $container = $("#component" + count).parent().find(".extra-info");
                 if($container.hasClass("d-none")){
                     $(".extra-info").addClass('d-none');
                     $container.removeClass("d-none");
