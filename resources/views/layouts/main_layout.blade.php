@@ -8,8 +8,13 @@
 
     <body>
         <div class="py-4 bg-light h-100">
-            <div class="bg-white container py-5 px-4 border rounded">
-                @yield('content')
+            <div class="container">
+                <div class="bg-white py-5 px-4 border rounded">
+                    @yield('navbar')
+                </div>
+                <div class="bg-white mt-4 py-5 px-4 border rounded">
+                    @yield('content')
+                </div>
             </div>
         </div>
         <!-- Bootstrap -->
