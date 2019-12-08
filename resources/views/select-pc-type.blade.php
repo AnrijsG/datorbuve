@@ -32,13 +32,13 @@
     <a href="/" class="btn bg-secondary text-white">Uz sākumu</a>
 
     <h2 class="text-center mt-2">Personalizēti datori Jūsu vajadzībām</h2>
-    <p>Mūsu speciālisti parūpēsies, lai Jūs saņemtu datoru, kurš domāts tieši Jums.</p>
+    <p class="lead">Mūsu speciālisti parūpēsies, lai Jūs saņemtu datoru, kurš domāts tieši Jums.</p>
 
     <div class="bg-light px-4 py-4">
         <div class="row">
             <?php foreach($types as $k => $v): ?>
-                <div class="col mb-2 <?= !isset($v['hasBorder']) ?: 'border-right'?>">
-                    <h3 class="pc-type-<?= $j ?>"><?= $k ?></h3>
+                <div class="col-3 mb-2 <?= !isset($v['hasBorder']) ?: 'border-right'?>">
+                    <h5 class="pc-type-<?= $j ?>"><?= $k ?></h5>
                     <p class="text-muted"><?= $v['description'] ?? '' ?></p>
 
                     <?php $j++ ?>
@@ -48,7 +48,7 @@
 
         <div class="row">
             <?php foreach($types as $k => $v): ?>
-                <div class="col text-center mb-2">
+                <div class="col-3 text-center mb-2">
                     <a class="bg-info w-100 p-2 border-0 text-white btn" onclick='selected(<?= $i ?>)' id="button<?= $i ?>">Izvēlēties</a>
                 </div>
 
