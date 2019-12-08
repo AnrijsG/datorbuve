@@ -17,6 +17,7 @@
         ],
     ];
     $i = 0;
+    $j = 0; //negribējās pisties
 ?>
 
 @extends('layouts.main_layout')
@@ -37,8 +38,10 @@
         <div class="row">
             <?php foreach($types as $k => $v): ?>
                 <div class="col mb-2 <?= !isset($v['hasBorder']) ?: 'border-right'?>">
-                    <h3><?= $k ?></h3>
+                    <h3 class="pc-type-<?= $j ?>"><?= $k ?></h3>
                     <p class="text-muted"><?= $v['description'] ?? '' ?></p>
+
+                    <?php $j++ ?>
                 </div>
             <?php endforeach; ?>
         </div>
@@ -108,20 +111,18 @@
             //$(".slidecontainer").removeClass("d-none");
             $("a").removeClass("selected");
             $("#button" + count).addClass("selected");
-            $("#pc-type").val($("#button" + count).text());
+            $("#pc-type").val(document.querySelector(".pc-type-" + count).textContent);
         }
 
-        $("#price").on("mouseup", function(){
+        function recalculateSliderValue() {
             var val = Math.round(this.value / 100);
             this.value = val * 100;
             $(".value-text").text(values[this.value / 100]);
-        });
+        }
 
-        $("#price").on("touchend", function(){
-            var val = Math.round(this.value / 100);
-            this.value = val * 100;
-            $(".value-text").text(values[this.value / 100]);
-        });
+        $("#price").on("mouseup", recalculateSliderValue());
+
+        $("#price").on("touchend", recalculateSliderValue());
 
         $("#price").on("input", function(){
             $(".value-text").text(values[Math.round(this.value / 100)]);
