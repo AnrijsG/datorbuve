@@ -26,7 +26,7 @@
                 <h3><?= $k ?></h3>
 
                 <ul>
-                    <li><?= $v ?></li>
+                    <li class="lead"><?= $v ?></li>
                 </ul>
             <?php endforeach; ?>
         </div>
