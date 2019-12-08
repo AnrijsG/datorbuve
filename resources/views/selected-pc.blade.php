@@ -1,12 +1,17 @@
-<?php 
+<?php
+/**
+ * @var array $replacement
+ * @var \App\Pc $pc
+ */
+
     $computer = $pc[0];
-    $variablesPC = [  
-        'Mātesplate'        => 'mobo', 
-        'Procesors '        => 'cpu', 
-        'Videokarte '       => 'gpu', 
-        'RAM '              => 'ram', 
-        'Atmiņa '           => 'storage', 
-        'Barošanas bloks'   => 'psu', 
+    $variablesPC = [
+        'Mātesplate'        => 'mobo',
+        'Procesors '        => 'cpu',
+        'Videokarte '       => 'gpu',
+        'RAM '              => 'ram',
+        'Atmiņa '           => 'storage',
+        'Barošanas bloks'   => 'psu',
         'Kaste'             => 'case'
     ];
     $variablesComponent = [
@@ -26,68 +31,70 @@
 @endsection
 
 @section('content')
-        <div class="row">
-            <div class="col-12 pb-5 text-center border-bottom">
-                <h2>Izvēlētais dators</h2>
-            </div>
-            <div class="row m-0 w-100 border-bottom image">
-                <div class="col-5 pl-5 pt-3 border-right">
-                    BILDE TE (Kastes??)
-                </div>
-                <div class="col-7 pt-3 text-center">
-                    <p>Apraksts : {{ $computer['description'] }}</p>
-                </div>
-            </div>
-            <div class="col-12 pt-3 text-center">
+    <a href="/" class="btn bg-secondary text-white">Uz sākumu</a>
 
-                <?php foreach($variablesPC as $k => $v): ?>
-                <div>
-                    <div class="info border" onclick="openExtras(<?= $i ?>)" id="component<?= $i ?>">
-                        <p>{{ $k }} : {{ $computer[$v] }}</p>
-                    </div>
-                    <div>
-                        <div class="extra-info d-none border-top">
-                        <?php $first = true; ?>
-                        <?php foreach($replacement[$v] as $k1 => $v1): ?>
-                            <div class="col-3 border">
-                                <?php foreach($variablesComponent as $key => $var): ?>
-                                    <p>{{ $key }} : {{ $v1[$var] }}</p>
-                                <?php endforeach; ?>
-                                <input type="radio" <?= ($first)?'checked':''; ?> />
-                                <?php $first = false; ?>
-                            </div>
-                        <?php endforeach; ?>
-                        </div>
-                    </div>
-                <div>
-                <?php $i++; ?>
-                <?php endforeach; ?>
-                <div>
-                    <p>Kopējā cena : <b>{{ $computer['price'] }}</b></p>
-                </div>
+    <div class="row">
+        <div class="col-12 pb-5 text-center border-bottom">
+            <h2>Izvēlētais dators</h2>
+        </div>
+        <div class="row m-0 w-100 border-bottom image">
+            <div class="col-5 pl-5 pt-3 border-right">
+                BILDE TE (Kastes??)
+            </div>
+            <div class="col-7 pt-3 text-center">
+                <p>Apraksts : {{ $computer['description'] }}</p>
             </div>
         </div>
+        <div class="col-12 pt-3 text-center">
 
-        <script>
-            function openExtras(count){
-                $container = $("#component" + count).parent().find(".extra-info");
-                if($container.hasClass("d-none")){
-                    $(".extra-info").addClass('d-none');
-                    $container.removeClass("d-none");
-                }else{
-                    $container.addClass("d-none");
-                }
+            <?php foreach($variablesPC as $k => $v): ?>
+            <div>
+                <div class="info border" onclick="openExtras(<?= $i ?>)" id="component<?= $i ?>">
+                    <p>{{ $k }} : {{ $computer[$v] }}</p>
+                </div>
+                <div>
+                    <div class="extra-info d-none border-top">
+                    <?php $first = true; ?>
+                    <?php foreach($replacement[$v] as $k1 => $v1): ?>
+                        <div class="col-3 border">
+                            <?php foreach($variablesComponent as $key => $var): ?>
+                                <p>{{ $key }} : {{ $v1[$var] }}</p>
+                            <?php endforeach; ?>
+                            <input type="radio" <?= ($first)?'checked':''; ?> />
+                            <?php $first = false; ?>
+                        </div>
+                    <?php endforeach; ?>
+                    </div>
+                </div>
+            <div>
+            <?php $i++; ?>
+            <?php endforeach; ?>
+            <div>
+                <p>Kopējā cena : <b>{{ $computer['price'] }}</b></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openExtras(count){
+            $container = $("#component" + count).parent().find(".extra-info");
+            if($container.hasClass("d-none")){
+                $(".extra-info").addClass('d-none');
+                $container.removeClass("d-none");
+            }else{
+                $container.addClass("d-none");
             }
-        </script>
-        <style>
-        .info{
-            cursor: pointer;
         }
-        .extra-info{
-            cursor: default;
-        }
-        .image{
-            min-height: 300px;
-        }
-        </style>
+    </script>
+    <style>
+    .info{
+        cursor: pointer;
+    }
+    .extra-info{
+        cursor: default;
+    }
+    .image{
+        min-height: 300px;
+    }
+    </style>
 @endsection

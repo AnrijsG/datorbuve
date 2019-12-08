@@ -17,7 +17,7 @@
     <a href="/" class="btn bg-secondary text-white">Uz sākumu</a>
 
     <div class="row">
-        <div class="col-12 pb-5 text-center border-bottom">
+        <div class="col-12 pb-5 text-center">
             <h2>Par CCS</h2>
         </div>
 
@@ -32,7 +32,7 @@
         </div>
 
         <div class="col-6 pt-3 text-center">
-            GMAPS
+            <img src="/images/logo-small.png" alt="Custom Computer Solutions Compact Logo">
         </div>
     </div>
 @endsection

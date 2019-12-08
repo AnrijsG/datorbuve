@@ -11,6 +11,7 @@
         <div class="py-4 bg-light h-100">
             <div class="container">
                 <div class="bg-white py-5 px-4 border rounded">
+                    <img class="d-block" style="max-width: 300px; margin: 0 auto;" src="/images/logo-full.png" alt="Custom Computer Solutions Logo">
                     @yield('navbar')
                 </div>
                 <div class="bg-white mt-4 py-5 px-4 border rounded">
