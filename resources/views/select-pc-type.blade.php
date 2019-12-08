@@ -99,7 +99,6 @@
 
         var values = ["Lēts", "Vidēji lēts", "Standarta", "Vidēji dārgs", "Ekskluzīvs"];
         function selected(count){
-
             if ($(".slidecontainer").hide()) {
                 $(".slidecontainer").slideToggle("fast");
             } else {
