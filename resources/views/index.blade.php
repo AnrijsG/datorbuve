@@ -2,12 +2,12 @@
     $sections = [
         'Personalizēti datori' => [
             'description' => 'Neziniet kāds dators nepieciešams Jūsu vajadzībām? Neuztraucieties, Mūsu serviss nodrošinās visus rīkus, lai Jūs tiktu pie datora, kādu kārojat tieši Jūs!',
-            'buttonTitle' => 'Uzzināt vairāk',
+            'buttonTitle' => 'Izvēlēties datoru',
             'buttonUrl' => 'select-pc',
             'shouldShowBorder' => true,
         ],
-        'Kontakti' => [
-            'description' => '',
+        'Par mums' => [
+            'description' => 'Uzziniet vairāk par Custom Computer Solutions',
             'buttonTitle' => 'Uzzināt vairāk par CCS',
             'buttonUrl' => 'contacts',
         ],
@@ -23,13 +23,19 @@
 @endsection
 
 @section('content')
-        <div class="row">
-            <?php foreach($sections as $k => $v): ?>
-                <div class="col <?= !isset($v['shouldShowBorder']) ?: 'border-right' ?>">
-                    <h2 class="mb-3"><?= $k ?></h2>
-                    <p><?= $v['description'] ?></p>
-                    <a href="<?= $v['buttonUrl'] ?>" class="bg-info p-2 border-0 text-white w-100 btn"><?= $v['buttonTitle'] ?></a>
-                </div>
-            <?php endforeach; ?>
+    <div class="row">
+        <?php foreach($sections as $k => $v): ?>
+            <div class="col <?= !isset($v['shouldShowBorder']) ?: 'border-right' ?>">
+                <h2 class="mb-3"><?= $k ?></h2>
+                <p><?= $v['description'] ?></p>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <div class="row">
+        <?php foreach($sections as $k => $v): ?>
+        <div class="col">
+                <a href="<?= $v['buttonUrl'] ?>" class="bg-info p-2 border-0 text-white w-100 btn"><?= $v['buttonTitle'] ?></a>
         </div>
+        <?php endforeach; ?>
+    </div>
 @endsection
