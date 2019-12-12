@@ -49,7 +49,7 @@
         <div class="row">
             <?php foreach($types as $k => $v): ?>
                 <div class="col-3 text-center mb-2">
-                    <a class="bg-info w-100 p-2 border-0 text-white btn" onclick='selected(<?= $i ?>)' id="button<?= $i ?>">Izvēlēties</a>
+                    <a class="bg-danger w-100 p-2 border-0 text-white btn" onclick='selected(<?= $i ?>)' id="button<?= $i ?>">Izvēlēties</a>
                 </div>
 
                 <?php $i++ ?>
@@ -62,7 +62,7 @@
                 <input type="text" class="d-none" id="pc-type" name="pc-type" readonly />
                 <input type="range" min="0" step="0.5" max="400" value="0" class="slider" id="price" name="price" />
                 <b><p class="value-text text-center mt-2">Lēts</p></b>
-                <input type="submit" class="bg-success text-white btn" value="Rādīt piedāvājumu" />
+                <input type="submit" class="bg-brown text-white btn" value="Rādīt piedāvājumu" />
             </form>
         </div>
     </div>
@@ -88,11 +88,11 @@
             width: 25px;
             height: 25px;
             border-radius: 50%;
-            background: #4CAF50;
+            background: #a52a2a;
             cursor: pointer;
         }
         a.btn.selected {
-            background-color: green !important;
+            background-color: brown !important;
         }
     </style>
     <script>
