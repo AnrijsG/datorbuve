@@ -67,6 +67,31 @@
         </div>
     </div>
 
+    <div class="modal" tabindex="-1" id="subscribeNewsletter" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Piedāvājums</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Vēlaties uzzināt vairāk? Atstājiet savu e-pastu un saņemt jaunumus par mūsu piedāvājumiem!</p>
+
+                    <div class="row pr-2 mr-3">
+                        <label class="col-2" for="emailField">Epasts: </label>
+                        <input class="col-10" id="emailField" type="text">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Citreiz</button>
+                    <button type="button" data-dismiss="modal" class="btn btn-danger">Pieteikties</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <style>
         .slidecontainer {
             width: 100%;
@@ -126,6 +151,14 @@
 
         $("#price").on("input", function(){
             $(".value-text").text(values[Math.round(this.value / 100)]);
+        });
+
+        $('#subscribeNewsletter').on('shown.bs.modal', function () {
+            $('#subscribeNewsletter').trigger('focus')
+        })
+
+        $(document).ready(function() {
+           $('#subscribeNewsletter').modal('show');
         });
     </script>
 @endsection
