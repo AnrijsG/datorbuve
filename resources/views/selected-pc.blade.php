@@ -86,7 +86,7 @@ use App\Pc;
             <?php $i++; ?>
             <?php endforeach; ?>
             <div>
-                <p class="text-right"><strong>Kopējā cena:</strong> {{ $computer['price'] }}</p>
+                <p class="text-right"><strong>Kopējā cena:</strong> €{{ $computer['price'] }}</p>
             </div>
         </div>
 
