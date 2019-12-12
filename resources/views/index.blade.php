@@ -34,7 +34,7 @@
     <div class="row">
         <?php foreach($sections as $k => $v): ?>
         <div class="col">
-                <a href="<?= $v['buttonUrl'] ?>" class="bg-info p-2 border-0 text-white w-100 btn"><?= $v['buttonTitle'] ?></a>
+                <a href="<?= $v['buttonUrl'] ?>" class="bg-danger p-2 border-0 text-white w-100 btn"><?= $v['buttonTitle'] ?></a>
         </div>
         <?php endforeach; ?>
     </div>

@@ -1,10 +1,30 @@
 <?php
+use App\Pc;
+
 /**
  * @var array $replacement
  * @var \App\Pc $pc
  */
 
+    // Dirty hack to escape exception lol
+    if (!isset($pc[0])) {
+        $pc[0] = [
+            'computer_type'     => Pc::TYPE_VIDEO_EDITING,
+            'price'             => 1250.43,
+            'price_category'    => 4,
+            'case'              => 'COOLER MASTER MASTERBOX MB520',
+            'mobo'              => 'MSI B450-A Pro ATX',
+            'cpu'               => 'AMD Ryzen 5 3600',
+            'gpu'               => 'Asus GeForce GTX 1650',
+            'psu'               => 'Corsair Vengeance 650M 650W',
+            'ram'               => 'G.SKILL Ripjaws V 32GB DDR4-3200',
+            'storage'           => 'Intel 660p M.2 512GB SSD; Seagate Barracuda 3TB',
+            'description'       => 'te actual informācija ir',
+        ];
+    }
+
     $computer = $pc[0];
+
     $variablesPC = [
         'Mātesplate'        => 'mobo',
         'Procesors '        => 'cpu',
@@ -33,24 +53,20 @@
 @section('content')
     <a href="/" class="btn bg-secondary text-white">Uz sākumu</a>
 
-    <div class="row">
-        <div class="col-12 pb-5 text-center border-bottom">
-            <h2>Izvēlētais dators</h2>
-        </div>
-        <div class="row m-0 w-100 border-bottom image">
-            <div class="col-5 pl-5 pt-3 border-right">
-                BILDE TE (Kastes??)
-            </div>
-            <div class="col-7 pt-3 text-center">
-                <p>Apraksts : {{ $computer['description'] }}</p>
-            </div>
-        </div>
-        <div class="col-12 pt-3 text-center">
+    <div class="col-12 pb-5 text-center">
+        <h2>Izvēlētais dators</h2>
+    </div>
 
+    <div class="row border mx-2 px-2 py-2">
+        <div class="col-4">
+            <img class="w-100" src="https://microless.com/cdn/products/7e098f62d7dc73666e1ac86ce62fa865-md.jpg" alt="Computer case">
+        </div>
+
+        <div class="col-8">
             <?php foreach($variablesPC as $k => $v): ?>
             <div>
-                <div class="info border" onclick="openExtras(<?= $i ?>)" id="component<?= $i ?>">
-                    <p>{{ $k }} : {{ $computer[$v] }}</p>
+                <div class="info px-2 bg-light border" onclick="openExtras(<?= $i ?>)" id="component<?= $i ?>">
+                    <p><strong>{{ $k }}</strong> : {{ $computer[$v] }}</p>
                 </div>
                 <div>
                     <div class="extra-info d-none border-top">
@@ -70,9 +86,10 @@
             <?php $i++; ?>
             <?php endforeach; ?>
             <div>
-                <p>Kopējā cena : <b>{{ $computer['price'] }}</b></p>
+                <p class="text-right"><strong>Kopējā cena:</strong> {{ $computer['price'] }}</p>
             </div>
         </div>
+
     </div>
 
     <script>
