@@ -2,18 +2,18 @@
     $types = [
         'Video montēšana' => [
             'hasBorder' => true,
-            'description' => 'Video montēšanā galvenā sastāvdaļa ir procesors',
+            'description' => 'Nepieciešams jaudīgs procesoru, daudz operatīvā atmiņa, pietiekami labu video karti, bet nav nepieciešamas visjaudīgākais, nepieciešamas vairāk atmiņas, jo video faili aizņem daudz vietas',
         ],
         'Spēļu' => [
             'hasBorder' => true,
-            'description' => 'Lai gan visas komponentes ir svarīgas spēlēm, iesakam vērst padziļinātu interesi uz video karti',
+            'description' => 'Lai gan visas komponentes ir svarīgas spēlēm, iesakam vērst padziļinātu interesi uz video karti un operatīvās atmiņas ātrumu, lai netiktu bremzēts procesors',
         ],
         'Staumēšanas' => [
             'hasBorder' => true,
-            'description' => 'es hzin ko te rakstīt',
+            'description' => 'Nepieciešama pietiekami spēcīga video karte, lai spētu paveikt gan video straumēšanu, gan pārējas darbības',
         ],
         "Mājas/Ofisa dators" => [
-            'description' => 'čista hzin, vecais',
+            'description' => 'Neliela formāta dators, kas neaizņem pārāk daudz vietas, kā arī spēj paveikt jebkuru ikdienas darbu un pat nedaudz vairāk grafiski intensīvus uzdevumus',
         ],
     ];
     $i = 0;
