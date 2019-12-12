@@ -62,7 +62,7 @@
                 <input type="text" class="d-none" id="pc-type" name="pc-type" readonly />
                 <input type="range" min="0" step="0.5" max="400" value="0" class="slider" id="price" name="price" />
                 <b><p class="value-text text-center mt-2">Lēts</p></b>
-                <input type="submit" class="bg-brown text-white btn" value="Rādīt piedāvājumu" />
+                <input type="submit" class="bg-danger text-white btn" value="Rādīt piedāvājumu" />
             </form>
         </div>
     </div>
