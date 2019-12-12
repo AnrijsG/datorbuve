@@ -158,7 +158,10 @@
         })
 
         $(document).ready(function() {
-           $('#subscribeNewsletter').modal('show');
+            if (!parseInt(localStorage.getItem('datorbuve-2'))) {
+                $('#subscribeNewsletter').modal('show');
+                localStorage.setItem('datorbuve-2', '1');
+            }
         });
     </script>
 @endsection
