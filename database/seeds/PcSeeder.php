@@ -7,8 +7,8 @@ class PcSeeder extends Seeder{
     private $computers = [
         [
             'computer_type'     => Pc::TYPE_VIDEO_EDITING,
-            'price'             => 1250.43,
-            'price_category'    => 4,
+            'price'             => 1269.99,
+            'price_category'    => 3,
             'case'              => 'COOLER MASTER MASTERBOX MB520',
             'mobo'              => 'MSI B450-A Pro ATX',
             'cpu'               => 'AMD Ryzen 5 3600',
@@ -20,8 +20,8 @@ class PcSeeder extends Seeder{
         ],
         [
             'computer_type'     => Pc::TYPE_GAMING,
-            'price'             => 1250.43,
-            'price_category'    => 4,
+            'price'             => 1359.99,
+            'price_category'    => 3,
             'case'              => 'DEEPCOOL TESSERACT',
             'mobo'              => 'Gigabyte B450 Gaming X',
             'cpu'               => 'AMD Ryzen 5 3600',
@@ -33,7 +33,7 @@ class PcSeeder extends Seeder{
         ],
         [
             'computer_type'     => Pc::TYPE_STREAMING,
-            'price'             => 1250.43,
+            'price'             => 1419.99,
             'price_category'    => 4,
             'case'              => 'BitFenix ATX NOVA',
             'mobo'              => 'ASRock B450 PRO4',
@@ -46,8 +46,8 @@ class PcSeeder extends Seeder{
         ],
         [
             'computer_type'     => Pc::TYPE_HOME,
-            'price'             => 1250.43,
-            'price_category'    => 4,
+            'price'             => 799.99,
+            'price_category'    => 1,
             'case'              => 'FRACTAL DESIGN CORE',
             'mobo'              => 'ASRock B450M-HDV R4.0',
             'cpu'               => 'AMD Ryzen 3 2200G',
